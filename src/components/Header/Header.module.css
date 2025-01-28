@@ -1,0 +1,33 @@
+.header {
+  width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 28px 64px;
+  background-color: #f7f7f7;
+}
+
+.logo {
+  width: 136px;
+  height: 15px;
+}
+
+.navList {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.navList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
