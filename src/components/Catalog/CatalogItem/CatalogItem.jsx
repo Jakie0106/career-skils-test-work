@@ -16,7 +16,6 @@ const CatalogItem = ({
   const icons = getIcons(item).filter((icon) =>
     requiredIcons.includes(icon.icon)
   );
-  console.log(icons);
 
   return (
     <div>

@@ -6,6 +6,7 @@ import {
   selectCampers,
   selectError,
   selectLoading,
+  selectFilters,
 } from "../../../redux/selectors.js";
 import s from "./CatalogList.module.css";
 
@@ -13,13 +14,14 @@ const CatalogList = () => {
   const { items } = useSelector(selectCampers);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
+  const filters = useSelector(selectFilters);
   const dispatch = useDispatch();
 
   const [visibleItems, setVisibleItems] = useState(4);
 
   useEffect(() => {
-    dispatch(fetchCampers());
-  }, [dispatch]);
+    dispatch(fetchCampers(filters));
+  }, [dispatch, filters]);
 
   const loadMoreItems = () => {
     setVisibleItems((prevVisibleItems) => prevVisibleItems + 4);
@@ -36,8 +38,6 @@ const CatalogList = () => {
   if (!items || items.length === 0) {
     return <p>No items found.</p>;
   }
-
-  console.log("xyu", items);
 
   return (
     <div className={s.catalogListBox}>

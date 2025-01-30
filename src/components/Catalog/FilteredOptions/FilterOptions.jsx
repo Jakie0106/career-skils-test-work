@@ -7,7 +7,7 @@ const FilterOptions = ({ options, selected, onClick }) => {
         <div
           key={option.value}
           className={`${s.filterOption} ${
-            selected === option.value ? "selected" : ""
+            selected.includes(option.value) ? s.selected : ""
           }`}
           onClick={() => onClick(option.value)}
         >
