@@ -11,7 +11,11 @@ const CatalogItem = ({
   description,
   item,
 }) => {
-  const icons = getIcons(item);
+  // const icons = getIcons(item);
+  const requiredIcons = ["diagram", "cup-hot", "fuel", "wind"];
+  const icons = getIcons(item).filter((icon) =>
+    requiredIcons.includes(icon.icon)
+  );
   console.log(icons);
 
   return (
@@ -21,22 +25,24 @@ const CatalogItem = ({
           <img className={s.catalogImg} src={photo.thumb} alt="" />
         </div>
         <div className={s.infoContainer}>
-          <div>
+          <div className={s.priceLocContainer}>
             <div className={s.priceBox}>
-              <h3>{name}</h3>
-              <div>
-                <p>{price}</p>
-                <span>icon</span>
+              <h3 className={s.nameCamp}>{name}</h3>
+              <div className={s.priceIconBox}>
+                <p className={s.priceNum}>€ {price}</p>
+                <svg className={s.priceIcon}>
+                  <use href="/public/sprite.svg#heart"></use>
+                </svg>
               </div>
             </div>
             <ul className={s.ratingList}>
-              <li>
+              <li className={s.ratingItem}>
                 <svg className={s.iconRating}>
                   <use href="/public/sprite.svg#star"></use>
                 </svg>
                 <span>{`${rating}(${reviews} Reviews)`}</span>
               </li>
-              <li>
+              <li className={s.ratingItem}>
                 <svg className={s.iconLoc}>
                   <use href="/public/sprite.svg#LocMap"></use>
                 </svg>

@@ -39,6 +39,7 @@ const SearchForm = () => {
                 id="location"
                 name="location"
                 type="text"
+                value="Kyiv, Ukraine"
               />
             </div>
           </div>

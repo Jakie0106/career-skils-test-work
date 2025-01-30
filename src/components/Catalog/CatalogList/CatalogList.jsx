@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import CatalogItem from "../CatalogItem/CatalogItem.jsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchCampers } from "../../../redux/operations.js";
 import {
   selectCampers,
@@ -15,9 +15,15 @@ const CatalogList = () => {
   const error = useSelector(selectError);
   const dispatch = useDispatch();
 
+  const [visibleItems, setVisibleItems] = useState(4);
+
   useEffect(() => {
     dispatch(fetchCampers());
   }, [dispatch]);
+
+  const loadMoreItems = () => {
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + 4);
+  };
 
   if (loading) {
     return <p>Loading...</p>;
@@ -34,9 +40,9 @@ const CatalogList = () => {
   console.log("xyu", items);
 
   return (
-    <div>
+    <div className={s.catalogListBox}>
       <ul className={s.paramList}>
-        {items.map((item) => (
+        {items.slice(0, visibleItems).map((item) => (
           <li key={item.id}>
             <CatalogItem
               name={item.name}
@@ -51,6 +57,11 @@ const CatalogList = () => {
           </li>
         ))}
       </ul>
+      {visibleItems < items.length && (
+        <button onClick={loadMoreItems} className={s.loadMoreBtn}>
+          Load More
+        </button>
+      )}
     </div>
   );
 };
