@@ -1,0 +1,64 @@
+.formContainer {
+  width: 641px;
+  margin: 0 auto;
+  padding: 44px 57px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  background-color: #fff;
+  gap: 8px;
+}
+
+.formContainer h3 {
+  font-weight: 600;
+  font-size: 20px;
+
+  line-height: 24px;
+}
+
+.formContainer p {
+  font-weight: 400;
+  font-size: 16px;
+  color: #6c717b;
+  line-height: 24px;
+}
+
+.formBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.formControl {
+  margin-bottom: 15px;
+}
+
+.inputField {
+  width: 527px;
+  padding: 18px 18px;
+  border-radius: 12px;
+  border: none;
+  background-color: #f7f7f7;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+}
+
+.submitButton {
+  padding: 16px 60px;
+  background-color: #e44848;
+  color: #fff;
+  border: none;
+  border-radius: 200px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  line-height: 24px;
+}
+
+.submitButton:hover {
+  background-color: #d84343;
+}

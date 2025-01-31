@@ -1,0 +1,60 @@
+.featuresContainer {
+  width: 631px;
+  /* height: 588px; */
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 44px 52px;
+}
+
+.iconList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 50px;
+}
+
+.iconListItem {
+  padding: 12px 18px;
+  border-radius: 100px;
+  background-color: #f2f4f7;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.paramsCampList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.paramsCampItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detailsText {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 48px;
+  line-height: 24px;
+  position: relative;
+}
+
+.detailsText::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  background-color: #dadde1;
+  height: 1px;
+  display: block;
+  bottom: -24px;
+}

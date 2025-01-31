@@ -1,0 +1,55 @@
+.reviewsContainer {
+  width: 631px;
+}
+
+.reviewerInitialBox {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.userInitial {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: #f2f4f7;
+  font-weight: 600;
+  font-size: 24px;
+  color: #e44848;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nameRatingBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reviewerName {
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 24px;
+}
+
+.reviewItem {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reviewComment {
+  font-weight: 400;
+  font-size: 16px;
+  color: #475467;
+  line-height: 24px;
+}

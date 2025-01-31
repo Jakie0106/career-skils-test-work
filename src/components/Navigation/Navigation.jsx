@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import s from "../Header/Header.module.css";
 
 const Navigation = () => {
@@ -7,10 +7,25 @@ const Navigation = () => {
       <nav>
         <ul className={s.navList}>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              exact
+              to="/"
+              className={({ isActive }) =>
+                isActive ? s.activeLink : s.inactiveLink
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/catalog">Catalog</Link>
+            <NavLink
+              to="/catalog"
+              className={({ isActive }) =>
+                isActive ? s.activeLink : s.inactiveLink
+              }
+            >
+              Catalog
+            </NavLink>
           </li>
         </ul>
       </nav>

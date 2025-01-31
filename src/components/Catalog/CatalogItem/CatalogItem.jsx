@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import s from "./CatalogItem.module.css";
 import { getIcons } from "./getIcon.js";
 
@@ -11,11 +12,15 @@ const CatalogItem = ({
   description,
   item,
 }) => {
-  // const icons = getIcons(item);
+  const navigate = useNavigate();
   const requiredIcons = ["diagram", "cup-hot", "fuel", "wind"];
   const icons = getIcons(item).filter((icon) =>
     requiredIcons.includes(icon.icon)
   );
+
+  const handleShowMore = () => {
+    navigate(`/campers/${item.id}`);
+  };
 
   return (
     <div>
@@ -63,7 +68,9 @@ const CatalogItem = ({
               </li>
             ))}
           </ul>
-          <button className={s.infoBtn}>Show more</button>
+          <button className={s.infoBtn} onClick={handleShowMore}>
+            Show more
+          </button>
         </div>
       </div>
     </div>

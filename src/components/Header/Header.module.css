@@ -24,6 +24,18 @@
   gap: 32px;
 }
 
+.inactiveLink {
+  color: #101828;
+}
+
+.navList a:hover {
+  color: #d84343;
+}
+
+.activeLink {
+  color: #d84343;
+}
+
 .navList ul {
   list-style: none;
   padding: 0;

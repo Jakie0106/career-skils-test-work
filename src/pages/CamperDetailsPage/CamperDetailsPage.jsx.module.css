@@ -1,0 +1,51 @@
+.infoCamper {
+  display: flex;
+  flex-direction: column;
+}
+
+.navLinks {
+  display: flex;
+  gap: 40px;
+  padding: 34px 64px;
+  position: relative;
+}
+
+.navLinks::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #dadde1;
+  position: absolute;
+  bottom: 0px;
+}
+
+.navButton {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  position: relative;
+}
+
+.navButton::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  position: absolute;
+  bottom: -35px;
+  z-index: 1;
+  left: 0;
+  background-color: #e44848;
+}
+
+.navButton.active::after {
+  width: 100%;
+}
+
+.detailFormBox {
+  display: flex;
+  gap: 40px;
+  padding: 44px 64px;
+}
