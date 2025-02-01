@@ -10,13 +10,13 @@ const CamperDetails = ({ camper }) => {
           <div className={s.ratingLocationBlock}>
             <div className={s.rating}>
               <svg className={s.iconRating}>
-                <use href="sprite.svg#star"></use>
+                <use href="/sprite.svg#star"></use>
               </svg>
               <span>{`${camper.rating}(${camper.reviews.length} Reviews)`}</span>
             </div>
             <div className={s.location}>
               <svg className={s.iconLoc}>
-                <use href="sprite.svg#LocMap"></use>
+                <use href="/sprite.svg#LocMap"></use>
               </svg>
               <span>{camper.location}</span>
             </div>
