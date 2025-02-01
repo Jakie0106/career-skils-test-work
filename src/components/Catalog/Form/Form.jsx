@@ -86,7 +86,6 @@ const SearchForm = () => {
       transmission: selectedTransmission,
       engine: selectedFuel,
     };
-    console.log("Filters:", filters);
     dispatch(setFilters(filters));
 
     resetForm();

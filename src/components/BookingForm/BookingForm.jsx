@@ -19,19 +19,11 @@ const BookingForm = () => {
     comment: Yup.string(),
   });
 
-  const onSubmit = (values) => {
-    console.log("Form data", values);
-  };
-
   return (
     <div className={s.formContainer}>
       <h3>Book your campervan now</h3>
       <p>Stay connected! We are always ready to help you.</p>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={onSubmit}
-      >
+      <Formik initialValues={initialValues} validationSchema={validationSchema}>
         <Form className={s.formBox}>
           <div className={s.formControl}>
             <Field

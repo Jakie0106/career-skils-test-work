@@ -19,8 +19,6 @@ const FeaturesComponent = ({ camper }) => {
     return titleCase;
   };
 
-  console.log(camper);
-
   return (
     <div>
       <div className={s.featuresContainer}>

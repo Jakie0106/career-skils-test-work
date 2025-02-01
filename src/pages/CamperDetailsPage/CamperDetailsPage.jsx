@@ -21,8 +21,6 @@ const CamperDetailsPage = () => {
   const error = useSelector(selectCamperDetailsError);
   const [activeComponent, setActiveComponent] = useState("features");
 
-  console.log(camper);
-
   useEffect(() => {
     dispatch(fetchCamperId(id));
   }, [dispatch, id]);

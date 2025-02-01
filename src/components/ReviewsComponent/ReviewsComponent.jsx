@@ -4,7 +4,6 @@ import s from "./ReviewsComponent.module.css";
 const ReviewsComponent = ({ camper }) => {
   const reviews = camper.reviews;
 
-  console.log(reviews);
   return (
     <div className={s.reviewsContainer}>
       <ul className={s.reviewsList}>
