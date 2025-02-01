@@ -71,13 +71,13 @@ const CatalogItem = ({
             <ul className={s.ratingList}>
               <li className={s.ratingItem}>
                 <svg className={s.iconRating}>
-                  <use href="/public/sprite.svg#star"></use>
+                  <use href="sprite.svg#star"></use>
                 </svg>
                 <span>{`${rating}(${reviews} Reviews)`}</span>
               </li>
               <li className={s.ratingItem}>
                 <svg className={s.iconLoc}>
-                  <use href="/public/sprite.svg#LocMap"></use>
+                  <use href="sprite.svg#LocMap"></use>
                 </svg>
                 <span>{location}</span>
               </li>
@@ -91,7 +91,7 @@ const CatalogItem = ({
             {icons.map((icon, index) => (
               <li className={s.paramItem} key={index}>
                 <svg className={s.iconParam}>
-                  <use href={`/public/sprite.svg#${icon.icon}`} />
+                  <use href={`sprite.svg#${icon.icon}`} />
                 </svg>
                 <span>{icon.label}</span>
               </li>

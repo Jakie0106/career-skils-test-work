@@ -42,7 +42,7 @@ const FilterOptions = ({ options, selected, onClick }) => {
             onClick={() => handleOptionClick(option.value, option.hasDropdown)}
           >
             <svg className={s.iconItem}>
-              <use xlinkHref={`/public/sprite.svg#${option.iconId}`} />
+              <use xlinkHref={`sprite.svg#${option.iconId}`} />
             </svg>
             <span className={s.labelText}>
               {option.hasDropdown && selectedLabels[option.value]
