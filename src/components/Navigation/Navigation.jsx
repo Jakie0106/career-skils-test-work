@@ -8,7 +8,7 @@ const Navigation = () => {
         <ul className={s.navList}>
           <li>
             <NavLink
-              exact
+              end
               to="/"
               className={({ isActive }) =>
                 isActive ? s.activeLink : s.inactiveLink

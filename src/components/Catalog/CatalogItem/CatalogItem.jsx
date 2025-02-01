@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import s from "./CatalogItem.module.css";
 import { getIcons } from "./getIcon.js";
+import { useEffect, useState } from "react";
+import { FaRegHeart } from "react-icons/fa";
 
 const CatalogItem = ({
   name,
@@ -18,6 +20,25 @@ const CatalogItem = ({
     requiredIcons.includes(icon.icon)
   );
 
+  const [favorites, setFavorites] = useState(() => {
+    const savedFavorites = localStorage.getItem("favorites");
+    return savedFavorites ? JSON.parse(savedFavorites) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
+
+  const toggleFavorite = () => {
+    setFavorites((prevFavorites) =>
+      prevFavorites.includes(item.id)
+        ? prevFavorites.filter((fav) => fav !== item.id)
+        : [...prevFavorites, item.id]
+    );
+  };
+
+  const isFavorite = favorites.includes(item.id);
+
   const handleShowMore = () => {
     navigate(`/campers/${item.id}`);
   };
@@ -31,12 +52,20 @@ const CatalogItem = ({
         <div className={s.infoContainer}>
           <div className={s.priceLocContainer}>
             <div className={s.priceBox}>
-              <h3 className={s.nameCamp}>{name}</h3>
+              <div className={s.nameCampBox}>
+                <h3 className={s.nameCamp}>{name}</h3>
+              </div>
               <div className={s.priceIconBox}>
                 <p className={s.priceNum}>€ {price}</p>
-                <svg className={s.priceIcon}>
-                  <use href="/public/sprite.svg#heart"></use>
-                </svg>
+                <span onClick={toggleFavorite} className={s.favoriteIcon}>
+                  {
+                    <FaRegHeart
+                      className={`${s.heartIcon} ${
+                        isFavorite ? s.favorite : s.notFavorite
+                      }`}
+                    />
+                  }
+                </span>
               </div>
             </div>
             <ul className={s.ratingList}>
