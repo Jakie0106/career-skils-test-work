@@ -28,7 +28,7 @@ const FeaturesComponent = ({ camper }) => {
           {icons.map((icon, index) => (
             <li key={index} className={s.iconListItem}>
               <svg className={s.icon}>
-                <use href={`sprite.svg#${icon.icon}`} />
+                <use href={`/sprite.svg#${icon.icon}`} />
               </svg>
               <span>{icon.label}</span>
             </li>
