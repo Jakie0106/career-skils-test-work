@@ -56,7 +56,7 @@ const CatalogItem = ({
                 <h3 className={s.nameCamp}>{name}</h3>
               </div>
               <div className={s.priceIconBox}>
-                <p className={s.priceNum}>€ {price}</p>
+                <p className={s.priceNum}>€ {price}.00</p>
                 <span onClick={toggleFavorite} className={s.favoriteIcon}>
                   {
                     <FaRegHeart

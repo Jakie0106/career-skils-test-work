@@ -37,7 +37,7 @@ const SearchForm = () => {
   ];
 
   const vehicleType = [
-    { value: "van", label: "Van", iconId: "van" },
+    { value: "panelTruck", label: "Van", iconId: "van" },
     { value: "fullyIntegrated", label: "Fully Integrated", iconId: "fully" },
     { value: "alcove", label: "Alcove", iconId: "alcove" },
   ];
